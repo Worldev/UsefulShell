@@ -408,9 +408,9 @@ You can encrypt a message writing "encrypt <message>"''')
                 
 
                             
-            elif "registrar" and "classe" in shell:
+            elif "registrar" and "classe" in shell or "register" and "class" in shell:
                 classe = Classe()
-            elif "registrar" and "classes" in shell:
+            elif "registrar" and "classes" in shell or "register" and "classes" in shell:
                 try:
                     while True:
                         classe = Classe()
