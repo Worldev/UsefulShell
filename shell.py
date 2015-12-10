@@ -86,10 +86,10 @@ if __name__ == "__main__":
                     self.email = input('Teacher\'s email: ')
                     self.number = input('Students number: ')
                     def save(self):
-                        self.class = input('Class: ')
+                        self.classe = input('Class: ')
                         print('---------')
                         self.file = open('Classes/' + self.classe + '.txt', 'w')
-                        self.file.write('======= Class of %s =======' % self.class + "\n")
+                        self.file.write('======= Class of %s =======' % self.classe + "\n")
                         self.file.write("Tutor: " + self.teach + "\n")
                         self.file.write("Email: " + self.email + "\n")
                         self.file.write("Students number: " + self.number)
