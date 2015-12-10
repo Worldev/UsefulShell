@@ -6,7 +6,7 @@ __credits__ = "Miquel Comas"
 __license__ = "GPLv3"
 __version__ = "0.1"
 __maintainer__ = "Miquel Comas"
-__email__ = "mcomash@gmail.com"
+
 __status__ = "Development"
 if __name__ == "__main__":
     try:
