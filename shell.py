@@ -202,9 +202,24 @@ You can encrypt a message writing "encrypt <message>"''')
       
 
         def delete_content(filename):
-            with open(filename, "w") as file:
-                file.seek(0)
-                file.truncate()
+            try:
+                with open(filename, "w") as file:
+                    file.seek(0)
+                    file.truncate()
+                if lang == 'ca':
+                    print('Fet')
+                else:
+                    print('Done')
+            except PermissionError:
+                if lang == 'ca':
+                    print('No es pot accedir al fitxer perquè l\'està usant un altre procés')
+                else:
+                    print('The process cannot access the file because it is being used by another process')
+            except FileNotFoundError:
+                if lang == 'ca':
+                    print('El fitxer no existeix.')
+                else:
+                    print('The file was not found.')
 
         
         while True:
@@ -393,25 +408,8 @@ You can encrypt a message writing "encrypt <message>"''')
                 decode(s)
 
             elif "delete" and "history" in shell or "esborrar" and "historial" in shell or "clear" and "history" in shell:
-                try:
-                    delete_content('tmp/shell_log.log')
-                    if lang == 'ca':
-                        print('Fet')
-                    else:
-                        print('Done')
-                except PermissionError:
-                    if lang == 'ca':
-                        print('No es pot accedir al fitxer perquè l\'està usant un altre procés')
-                    else:
-                        print('The process cannot access the file because it is being used by another process')
-                except FileNotFoundError:
-                    if lang == 'ca':
-                        print('El fitxer no existeix.')
-                    else:
-                        print('The file was not found.')
-                
+                delete_content('tmp/shell_log.log')
 
-                            
             elif "registrar" and "classe" in shell or "register" and "class" in shell:
                 classe = Classe()
             elif "registrar" and "classes" in shell or "register" and "classes" in shell:
