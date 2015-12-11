@@ -452,9 +452,9 @@ You can encrypt a message writing "encrypt <message>"''')
 
             else:
                 if lang == 'ca':
-                    print('Aquesta ordre no s\'ha reconegut')
+                    print('Aquesta ordre no s\'ha reconegut!')
                 else:
-                    print('This is not a known command')
+                    print('This is not a known command!')
 
                 
     except KeyboardInterrupt:
