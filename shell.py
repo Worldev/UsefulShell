@@ -89,7 +89,7 @@ if __name__ == "__main__":
                         pass
                     self.teach = input('Tutor: ')
                     self.email = input('Teacher\'s email: ')
-                    self.number = input('Students number: ')
+                    self.number = input('Number of students: ')
                     def save(self):
                         self.classe = input('Class: ')
                         print('---------')
@@ -97,7 +97,7 @@ if __name__ == "__main__":
                         self.file.write('======= Class of %s =======' % self.classe + "\n")
                         self.file.write("Tutor: " + self.teach + "\n")
                         self.file.write("Email: " + self.email + "\n")
-                        self.file.write("Students number: " + self.number)
+                        self.file.write("Number of students: " + self.number)
                         self.file.close()
 
                     save(self)
