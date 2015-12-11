@@ -223,6 +223,7 @@ You can encrypt a message writing "encrypt <message>"''')
                     print('The file was not found.')
 
         def work_web():
+            """ Inputs a website and saves it to tmp/url_work.txt """
             if lang == 'ca':
                 listdir = os.listdir('tmp')
                 if 'url_work.txt' in listdir:
