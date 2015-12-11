@@ -35,7 +35,7 @@ if __name__ == "__main__":
         
         try:
             os.mkdir('tmp')
-        except FileExsitsError:
+        except FileExistsError:
             pass
         
         def run():
@@ -171,13 +171,11 @@ You can encrypt a message writing "encrypt <message>"''')
 
         def ping():
             """ This function ping a website and returns 0 if up or >0 if down """
-            si = subprocess.STARTUPINFO()
-            si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             hostname = shell[1]
             if platform.system() == "Windows":
-                response = subprocess.call("ping -n 1 " + hostname, startupinfo=si)
+                response = subprocess.call("ping -n 1 " + hostname)
             else:
-                response = subprocess.call("ping -c 1 " + hostname, startupinfo=si)
+                response = subprocess.call("ping -c 1 " + hostname)
 
             if response == 0:
                 if lang == 'ca':
