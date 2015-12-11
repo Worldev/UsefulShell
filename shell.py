@@ -227,8 +227,8 @@ You can encrypt a message writing "encrypt <message>"''')
                     exit()
                 break
         
-            elif "feina"  and "cole" in shell or "work" and "school" in shell or "feina" and "escola" in shell:
-                webbrowser.open('http://www.escolatecnos.cat/campus/login/index.php')
+            elif "feina" in shell or "work" in shell:
+                webbrowser.open('') #work link
 
             elif "mirar" and "correu" in shell or "see" and "mail" in shell:
                 webbrowser.open('https://mail.google.com')
