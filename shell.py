@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # Python 3.5 needed
-__author__ = "Miquel Comas"
+__author__ = "Miquel Comas (Mikicat)"
 __copyright__ = "Copyright 2015, The UsefulShell Project"
-__credits__ = ["Miquel Comas", "JeDa"]
+__credits__ = ["Miquel Comas (Mikicat)", "JeDa"]
 __license__ = "GPLv3"
 __version__ = "0.1"
 __maintainer__ = "Miquel Comas"
@@ -202,6 +202,7 @@ You can encrypt a message writing "encrypt <message>"''')
       
 
         def delete_content(filename):
+            """ This function deletes the history file's content """
             try:
                 with open(filename, "w") as file:
                     file.seek(0)
@@ -220,6 +221,34 @@ You can encrypt a message writing "encrypt <message>"''')
                     print('El fitxer no existeix.')
                 else:
                     print('The file was not found.')
+
+        def work_web():
+            if lang == 'ca':
+                listdir = os.listdir('tmp')
+                if 'url_work.txt' in listdir:
+                    work_url = open('tmp/url_work.txt', 'r').read()
+                else:
+                    work_url = input('Url (sense http://): ')
+                    save = input('Guardar? ')
+                    save = save.lower()
+            else:
+                listdir = os.listdir('tmp')
+                if 'url_work.txt' in listdir:
+                    work_url = open('tmp/url_work.txt', 'r').read()
+                else:
+                    work_url = input('Url (without http://): ')
+                    save = input('Save? ')
+                    save = save.lower()
+            try:
+                if save == "yes" or save == "sí" or save == "y" or save == "s":
+                    document = open('tmp/url_work.txt', 'w')
+                    document.write(work_url)
+                    document.close()
+                else:
+                    webbrowser.open('http://' + work_url) #work link
+            except NameError:
+                webbrowser.open('http://' + work_url) #work link
+
 
         
         while True:
@@ -241,8 +270,8 @@ You can encrypt a message writing "encrypt <message>"''')
                 break
 
             elif "feina" in shell or "work" in shell:
-                work_url = input('Url (without http://): ')
-                webbrowser.open('http://' + work_url) #work link
+                work_web()
+
 
             elif "mirar" and "correu" in shell or "see" and "mail" in shell:
                 webbrowser.open('https://mail.google.com')
