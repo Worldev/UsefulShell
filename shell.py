@@ -27,6 +27,7 @@ if __name__ == "__main__":
             import json
             import re
             import base64
+            import inspect
 
             
         except ImportError:
@@ -448,6 +449,7 @@ You can encrypt a message writing "encrypt <message>"''')
                         classe = Classe()
                 except KeyboardInterrupt:
                     pass
+
             else:
                 if lang == 'ca':
                     print('Aquesta ordre no s\'ha reconegut')
