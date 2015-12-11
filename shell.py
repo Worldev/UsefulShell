@@ -252,7 +252,7 @@ You can encrypt a message writing "encrypt <message>"''')
                     if lang == 'ca':
                         print('No pots dividir lletres')
                     else:
-                       print('You can not divide letters')
+                        print('You can not divide letters')
                     
             elif "/" in shell:
                 try:
