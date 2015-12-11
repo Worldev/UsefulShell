@@ -32,7 +32,12 @@ if __name__ == "__main__":
         except ImportError:
             print('A module has failed to load')
             exit()
-
+        
+        try:
+            os.mkdir('tmp')
+        except FileExsitsError:
+            pass
+        
         def run():
             """ This function opens a port in your localhost.
              The default port is 8000 in order to not cause trouble
@@ -121,7 +126,7 @@ if __name__ == "__main__":
             pass
 
         print('OS: ' + platform.system() + ' --> Init time: ' + time.asctime())
-        logging.basicConfig(filename='shell_log.log', level=logging.INFO)
+        logging.basicConfig(filename='tmp/shell_log.log', level=logging.INFO)
         logging.info(' Initialization time: ' + time.asctime())
         logging.info(' OS: ' + platform.system())
         lang = input('Choose your language (en/ca) [en]: ')
@@ -346,7 +351,7 @@ You can encrypt a message writing "encrypt <message>"''')
             elif "!." in shell:
                 try:
                     try:
-                        dictionary = open('dictionary.variables', 'w')
+                        dictionary = open('tmp/dictionary.variables', 'w')
                     except FileNotFoundError:
                         if lang == 'ca':
                             print('El fitxer dictionary.variables no ha estat trobat')
@@ -359,7 +364,7 @@ You can encrypt a message writing "encrypt <message>"''')
                     print('You have not entered all the variable parts!')
             
             elif "see" and "variables" in shell or "mostra" and "variables" in shell:
-                seedictionary = open('dictionary.variables', 'r')
+                seedictionary = open('tmp/dictionary.variables', 'r')
                 print(seedictionary.read())
 
 
@@ -373,7 +378,7 @@ You can encrypt a message writing "encrypt <message>"''')
                 run()
                 
             elif "history" == inp or "historial" == inp:
-                history = open('shell_log.log', 'r')
+                history = open('tmp/shell_log.log', 'r')
                 print(history.read())
                 
             elif "encrypt" in shell or "encripta" in shell or "encode" in shell:
@@ -390,7 +395,7 @@ You can encrypt a message writing "encrypt <message>"''')
 
             elif "delete" and "history" in shell or "esborrar" and "historial" in shell or "clear" and "history" in shell:
                 try:
-                    delete_content('shell_log.log')
+                    delete_content('tmp/shell_log.log')
                     if lang == 'ca':
                         print('Fet')
                     else:
