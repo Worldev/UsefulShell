@@ -15,4 +15,4 @@ import urllib, urllib.parse, urllib.request
 import json
 import re
 import base64
-from . import shell
+from .shell import *
