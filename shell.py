@@ -224,9 +224,10 @@ You can encrypt a message writing "encrypt <message>"''')
                     print('Session End.')
                     exit()
                 break
-        
+
             elif "feina" in shell or "work" in shell:
-                webbrowser.open('') #work link
+                work_url = input('Url (without http://): ')
+                webbrowser.open('http://' + work_url) #work link
 
             elif "mirar" and "correu" in shell or "see" and "mail" in shell:
                 webbrowser.open('https://mail.google.com')
