@@ -292,6 +292,10 @@ You can encrypt a message writing "encrypt <message>"''')
                                         print(ftp.ntrasfercmd(shell[1]))
                                     elif "mlsd" in shell:
                                         print(ftp.mlsd(path=shell[1], facts=[]))
+                                    elif "nlst" or "ls" or "list" in shell:
+                                        list = ftp.nlst()
+                                        strnlst = "\n".join(list)
+                                        print(strnlst)
                                     elif "rename" in shell:
                                         print(ftp.rename(shell[1], shell[2]))
                                     elif "delete" in shell:
