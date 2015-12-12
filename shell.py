@@ -265,11 +265,16 @@ You can encrypt a message writing "encrypt <message>"''')
                     ftp.retrlines('LIST')
                     try:
                         while True:
-                            inp = input('ftp ' + ftp.pwd() + ' > ')
+                            inp = input('ftp ' + ftp.pwd() + '> ')
+                            shell = inp.split()
                             ftplog.info(inp)
                             try:
                                 print(ftp.sendcmd(inp))
                             except:
+                                if "mkd" in shell:
+                                    print(ftp.mkd(shell[1]))
+                                elif "rmd" == inp:
+                                    print(ftp.rmd(shell[1]))
                                 print('500 Unknown command')
                     except KeyboardInterrupt:
                         pass
