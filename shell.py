@@ -271,41 +271,44 @@ You can encrypt a message writing "encrypt <message>"''')
                             try:
                                 print(ftp.sendcmd(inp))
                             except:
-                                if "retrbinary" in shell:
-                                    print(ftp.retrbinary(shell[1]))
-                                elif "retrlines" in shell:
-                                    print(ftp.retrlines(shell[1]))
-                                elif "set_pasv" in shell:
-                                    print(ftp.set_pasv(shell[1]))
-                                elif "storbinary" in shell:
-                                    print(ftp.storbinary(shell[1], shell[2]))
-                                elif "storlines" in shell:
-                                    print(ftp.storlines(shell[1], shell[2]))
-                                elif "transfercmd" in shell:
-                                    print(ftp.transfercmd(shell[1]))
-                                elif "ntransfercmd" in shell:
-                                    print(ftp.ntrasfercmd(shell[1]))
-                                elif "mlsd" in shell:
-                                    print(ftp.mlsd(path=shell[1], facts=[]))
-                                elif "rename" in shell:
-                                    print(ftp.rename(shell[1], shell[2]))
-                                elif "delete" in shell:
-                                    print(ftp.delete(shell[1]))
-                                elif "cwd" or "cd" in shell:
-                                    print(ftp.cwd(shell[1]))
-                                elif "mkd" or "mkdir" in shell:
-                                    print(ftp.mkd(shell[1]))
-                                elif "pwd" in shell:
-                                    print(ftp.pwd())
-                                elif "rmd" or "rmdir" in shell:
-                                    print(ftp.rmd(shell[1]))
-                                elif "size" in shell:
-                                    print(ftp.size(shell[1]))
+                                try:
+                                    if "retrbinary" in shell:
+                                        print(ftp.retrbinary(shell[1]))
+                                    elif "retrlines" in shell:
+                                        print(ftp.retrlines(shell[1]))
+                                    elif "set_pasv" in shell:
+                                        print(ftp.set_pasv(shell[1]))
+                                    elif "storbinary" in shell:
+                                        print(ftp.storbinary(shell[1], shell[2]))
+                                    elif "storlines" in shell:
+                                        print(ftp.storlines(shell[1], shell[2]))
+                                    elif "transfercmd" in shell:
+                                        print(ftp.transfercmd(shell[1]))
+                                    elif "ntransfercmd" in shell:
+                                        print(ftp.ntrasfercmd(shell[1]))
+                                    elif "mlsd" in shell:
+                                        print(ftp.mlsd(path=shell[1], facts=[]))
+                                    elif "rename" in shell:
+                                        print(ftp.rename(shell[1], shell[2]))
+                                    elif "delete" in shell:
+                                        print(ftp.delete(shell[1]))
+                                    elif "cwd" or "cd" in shell:
+                                        print(ftp.cwd(shell[1]))
+                                    elif "mkd" or "mkdir" in shell:
+                                        print(ftp.mkd(shell[1]))
+                                    elif "pwd" in shell:
+                                        print(ftp.pwd())
+                                    elif "rmd" or "rmdir" in shell:
+                                        print(ftp.rmd(shell[1]))
+                                    elif "size" in shell:
+                                        print(ftp.size(shell[1]))
 
-                                else:
-                                    print('500 Unknown command')
+                                    else:
+                                        print('500 Unknown command')
+                                except IndexError:
+                                    continue
                     except EOFError:
-                        pass
+                        print('500 Unknown command')
                     except KeyboardInterrupt:
                         pass
 
@@ -332,8 +335,6 @@ You can encrypt a message writing "encrypt <message>"''')
             elif "ftp" in shell:
                 try:
                     ftpserver = ftp(shell[1], int(shell[2]), shell[3], shell[4])
-                except IndexError:
-                    print('Syntax: <host> <port> <user> <passwd>')
                 except ValueError:
                     print('Syntax: <host> <port> <user> <passwd>')
 
