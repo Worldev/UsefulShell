@@ -151,7 +151,8 @@ if __name__ == "__main__":
                 input('''Prem Enter per continuar...''')
                 print('''
 Per dir "igual a" has de posar ==
-Creació de variables: !. variable = 'valor'
+Per connectar-te a un servidor ftp, la sintaxi és:
+<host> <port> <usuari> <contrasenya>
 Per fer ping (i comprovar si el host està en línia), la sintaxi és: ping domini.com
 Pots encriptar un missatge escrivint "encripta <missatge>"''')
                 input('''Prem Enter per continuar...''')
@@ -161,7 +162,8 @@ Pots encriptar un missatge escrivint "encripta <missatge>"''')
                 input('''Press Enter to continue''')
                 print('''
 To say "equal to" you have to put ==
-Creation of variables: !. variable = 'value'
+To connect to a ftp server, the syntax is:
+<host> <port> <user> <password>
 To make ping (and check if host is up), the syntax is: ping domain.com
 You can encrypt a message writing "encrypt <message>"''')
                 input('''Press Enter to continue...''')
@@ -317,7 +319,7 @@ You can encrypt a message writing "encrypt <message>"''')
 
 
         while True:
-            inp = input("> ")
+            inp = input(os.getcwd() + "> ")
             shell = inp.split()
             if shell[0] == "ftp":
                 loglist = [shell[0], shell[1], shell[2], shell[3], '*' * len(shell[4])]
