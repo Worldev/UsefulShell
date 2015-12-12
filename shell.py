@@ -265,7 +265,7 @@ You can encrypt a message writing "encrypt <message>"''')
                     if lang == 'ca':
                         print('No pots dividir lletres')
                     else:
-                       print('You can not divide letters')
+                        print('You can not divide letters')
                     
             elif "+" in shell:
                 try:
@@ -367,7 +367,7 @@ You can encrypt a message writing "encrypt <message>"''')
                 
             elif "decrypt" in shell or "desencripta" in shell or "decode" in shell:
                 del shell[0]
-                sjoin =  ''.join(shell)
+                sjoin = ''.join(shell)
                 s = str.encode(sjoin)
                 decode(s)
 
@@ -379,7 +379,7 @@ You can encrypt a message writing "encrypt <message>"''')
             elif "registrar" and "classes" in shell or "register" and "classes" in shell:
                 try:
                     while True:
-                        classe = Classe()
+                        classe = Class()
                 except KeyboardInterrupt:
                     pass
 
