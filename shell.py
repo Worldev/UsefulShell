@@ -306,9 +306,9 @@ You can encrypt a message writing "encrypt <message>"''')
                                     else:
                                         print('500 Unknown command')
                                 except IndexError:
-                                    continue
+                                    print('500 Unknown command')
                     except EOFError:
-                        print('500 Unknown command')
+                        pass
                     except KeyboardInterrupt:
                         pass
 
