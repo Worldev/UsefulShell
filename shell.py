@@ -29,6 +29,7 @@ if __name__ == "__main__":
             import base64
             import inspect
             from ftplib import FTP
+            from modules.ftp import *
 
             
         except ImportError:

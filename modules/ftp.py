@@ -1,3 +1,7 @@
+import logging, logging.handlers
+import logging.config
+from ftplib import FTP
+
 class ftp:
             """ Connects to an ftp server """
             def __init__(self, host, port, user, passwd):
