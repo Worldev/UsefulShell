@@ -43,7 +43,6 @@ if __name__ == "__main__":
         except ImportError:
             print('A module has failed to load')
             exit()
-        
         try:
             os.mkdir('tmp')
         except FileExistsError:
