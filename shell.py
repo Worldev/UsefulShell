@@ -253,7 +253,9 @@ You can encrypt a message writing "encrypt <message>"''')
                 webbrowser.open('http://' + work_url) #work link
 
         class ftp:
+            """ Connects to an ftp server """
             def __init__(self, host, port, user, passwd):
+                """  Connection to ftp __init__ """
                 ftplog = logging.getLogger('ftpserver')
                 self.host = host
                 self.port = port
