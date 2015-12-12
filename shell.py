@@ -306,13 +306,17 @@ You can encrypt a message writing "encrypt <message>"''')
                                         print(ftp.rmd(shell[1]))
                                     elif "size" in shell:
                                         print(ftp.size(shell[1]))
-                                    elif "list" in shell:
-                                        print(ftp.nlst())
 
                                     else:
                                         print('500 Unknown command')
+
                                 except IndexError:
-                                    pass
+                                    print('500 Unknown command')
+                                except:
+                                    if str(resp) == "550 Failed to change directory":
+                                        print("550 Failed to change directory")
+                                    else:
+                                        print("550 Error")
                     except EOFError:
                         pass
                     except KeyboardInterrupt:
