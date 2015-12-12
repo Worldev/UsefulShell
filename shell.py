@@ -34,6 +34,7 @@ if __name__ == "__main__":
             from modules.group import *
             from modules.encoding import *
             from modules.help import *
+            from modules.ping import *
 
             
         except ImportError:
@@ -86,25 +87,6 @@ if __name__ == "__main__":
         def clear():
             """ This function "clears" the screen by printing 100 "\n" """
             print("\n" * 100)
-
-        def ping():
-            """ This function ping a website and returns 0 if up or >0 if down """
-            hostname = shell[1]
-            if platform.system() == "Windows":
-                response = subprocess.call("ping -n 1 " + hostname)
-            else:
-                response = subprocess.call("ping -c 1 " + hostname)
-
-            if response == 0:
-                if lang == 'ca':
-                    print(hostname, 'està en línia')
-                else:
-                    print(hostname, 'is up!')
-            else:
-                if lang == 'ca':
-                    print(hostname, 'no està en línia')
-                else:
-                    print(hostname, 'is down!')
 
         def delete_content(filename):
             """ This function deletes the history file's content """
