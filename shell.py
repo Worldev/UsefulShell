@@ -242,11 +242,6 @@ if __name__ == "__main__":
                 else:
                     pass
 
-            elif "see" and "variables" in shell or "mostra" and "variables" in shell:
-                seedictionary = open('tmp/dictionary.variables', 'r')
-                print(seedictionary.read())
-
-
             elif "zen" and "python" in shell or "Zen" and "Python" in shell:
                 import this
 
