@@ -2,9 +2,8 @@ import platform
 import subprocess
 
 
-def ping():
+def ping(hostname):
     """ This function ping a website and returns 0 if up or >0 if down """
-    hostname = shell[1]
     if platform.system() == "Windows":
         response = subprocess.call("ping -n 1 " + hostname)
     else:

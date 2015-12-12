@@ -299,7 +299,7 @@ if __name__ == "__main__":
                 import this
 
             elif "ping" in shell:
-                ping()
+                ping(shell[1])
             
             elif "http" and "server" in shell:
                 run()
