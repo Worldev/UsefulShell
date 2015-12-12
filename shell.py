@@ -285,8 +285,8 @@ You can encrypt a message writing "encrypt <message>"''')
                                     print(ftp.transfercmd(shell[1]))
                                 elif "ntransfercmd" in shell:
                                     print(ftp.ntrasfercmd(shell[1]))
-                                elif "msld" in shell:
-                                    print(ftp.msld(path=shell[1], facts=[]))
+                                elif "mlsd" in shell:
+                                    print(ftp.mlsd(path=shell[1], facts=[]))
                                 elif "rename" in shell:
                                     print(ftp.rename(shell[1], shell[2]))
                                 elif "delete" in shell:
@@ -301,6 +301,7 @@ You can encrypt a message writing "encrypt <message>"''')
                                     print(ftp.rmd(shell[1]))
                                 elif "size" in shell:
                                     print(ftp.size(shell[1]))
+
                                 else:
                                     print('500 Unknown command')
                     except EOFError:
