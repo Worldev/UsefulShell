@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import logging, logging.handlers
 import logging.config
 from ftplib import FTP
