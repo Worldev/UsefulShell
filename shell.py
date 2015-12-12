@@ -28,6 +28,7 @@ if __name__ == "__main__":
             import re
             import base64
             import inspect
+            import builtins
             from ftplib import FTP
             from modules.ftp import *
             from modules.httpd import *
@@ -72,7 +73,7 @@ if __name__ == "__main__":
         logging.basicConfig(filename='tmp/shell_log.log', level=logging.INFO)
         logging.info(' Initialization time: ' + time.asctime())
         logging.info(' OS: ' + platform.system())
-        lang = input('Choose your language (en/ca) [en]: ')
+        builtins.lang = input('Choose your language (en/ca) [en]: ')
         if lang == '':
             lang = 'en'
         else:
