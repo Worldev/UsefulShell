@@ -254,13 +254,26 @@ You can encrypt a message writing "encrypt <message>"''')
 
         class ftp:
             def __init__(self, host, port, user, passwd):
+                ftplog = logging.getLogger('ftpserver')
                 self.host = host
                 self.port = port
                 self.user = user
                 self.passwd = passwd
                 with FTP(self.host, self.user, self.passwd) as ftp:
                     ftp.login(self.user, self.passwd)
-                    ftp.dir()
+                    ftp.getwelcome()
+                    ftp.retrlines('LIST')
+                    try:
+                        while True:
+                            inp = input('ftp ' + ftp.pwd() + ' > ')
+                            ftplog.info(inp)
+                            try:
+                                print(ftp.sendcmd(inp))
+                            except:
+                                print('500 Unknown command')
+                    except KeyboardInterrupt:
+                        pass
+
 
 
         while True:
@@ -285,6 +298,8 @@ You can encrypt a message writing "encrypt <message>"''')
                 try:
                     ftp = ftp(shell[1], int(shell[2]), shell[3], shell[4])
                 except IndexError:
+                    print('Syntax: <host> <port> <user> <passwd>')
+                except ValueError:
                     print('Syntax: <host> <port> <user> <passwd>')
 
             elif "feina" in shell or "work" in shell:
