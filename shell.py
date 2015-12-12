@@ -28,6 +28,7 @@ if __name__ == "__main__":
             import re
             import base64
             import inspect
+            from ftplib import FTP
 
             
         except ImportError:
@@ -251,6 +252,17 @@ You can encrypt a message writing "encrypt <message>"''')
             except NameError:
                 webbrowser.open('http://' + work_url) #work link
 
+        class ftp:
+            def __init__(self, host, port, user, passwd):
+                self.host = host
+                self.port = port
+                self.user = user
+                self.passwd = passwd
+                with FTP(self.host, self.user, self.passwd) as ftp:
+                    ftp.login(self.user, self.passwd)
+                    ftp.dir()
+
+
         while True:
             inp = input("> ")
             logging.info(' Input: ' + inp)
@@ -268,6 +280,12 @@ You can encrypt a message writing "encrypt <message>"''')
                     print('Session End.')
                     exit()
                 break
+
+            elif "ftp" in shell:
+                try:
+                    ftp = ftp(shell[1], int(shell[2]), shell[3], shell[4])
+                except IndexError:
+                    print('Syntax: <host> <port> <user> <passwd>')
 
             elif "feina" in shell or "work" in shell:
                 work_web()
