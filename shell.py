@@ -295,8 +295,12 @@ You can encrypt a message writing "encrypt <message>"''')
                                     print(ftp.cwd(shell[1]))
                                 elif "mkd" or "mkdir" in shell:
                                     print(ftp.mkd(shell[1]))
+                                elif "pwd" in shell:
+                                    print(ftp.pwd())
                                 elif "rmd" or "rmdir" in shell:
                                     print(ftp.rmd(shell[1]))
+                                elif "size" in shell:
+                                    print(ftp.size(shell[1]))
                                 else:
                                     print('500 Unknown command')
                     except EOFError:
