@@ -316,8 +316,13 @@ You can encrypt a message writing "encrypt <message>"''')
 
         while True:
             inp = input("> ")
-            logging.info(' Input: ' + inp)
             shell = inp.split()
+            if shell[0] == "ftp":
+                loglist = [shell[0], shell[1], shell[2], shell[3], '*' * len(shell[4])]
+                logstr = ' '.join(loglist)
+                logging.info(logstr)
+            else:
+                logging.info(' Input: ' + inp)
             
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
                 del shell[0]
