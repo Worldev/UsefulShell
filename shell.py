@@ -36,7 +36,7 @@ if __name__ == "__main__":
             from modules.help import *
             from modules.ping import *
             from modules.delete import *
-            from modules.weburl import *
+            from modules.workurl import *
 
             
         except ImportError:
