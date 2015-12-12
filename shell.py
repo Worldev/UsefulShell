@@ -36,6 +36,7 @@ if __name__ == "__main__":
             from modules.help import *
             from modules.ping import *
             from modules.delete import *
+            from modules.weburl import *
 
             
         except ImportError:
@@ -88,35 +89,6 @@ if __name__ == "__main__":
         def clear():
             """ This function "clears" the screen by printing 100 "\n" """
             print("\n" * 100)
-
-        def work_web():
-            """ Inputs a website and saves it to tmp/url_work.txt """
-            if lang == 'ca':
-                listdir = os.listdir('tmp')
-                if 'url_work.txt' in listdir:
-                    work_url = open('tmp/url_work.txt', 'r').read()
-                else:
-                    work_url = input('Url (sense http://): ')
-                    save = input('Guardar? ')
-                    save = save.lower()
-            else:
-                listdir = os.listdir('tmp')
-                if 'url_work.txt' in listdir:
-                    work_url = open('tmp/url_work.txt', 'r').read()
-                else:
-                    work_url = input('Url (without http://): ')
-                    save = input('Save? ')
-                    save = save.lower()
-            try:
-                if save == "yes" or save == "sí" or save == "y" or save == "s":
-                    document = open('tmp/url_work.txt', 'w')
-                    document.write(work_url)
-                    document.close()
-                else:
-                    webbrowser.open('http://' + work_url) #work link
-            except NameError:
-                webbrowser.open('http://' + work_url) #work link
-
 
 
         while True:
