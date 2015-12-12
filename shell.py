@@ -251,25 +251,6 @@ You can encrypt a message writing "encrypt <message>"''')
             except NameError:
                 webbrowser.open('http://' + work_url) #work link
 
-        def variable(var, value):
-            try:
-                try:
-                    dictionary = open('tmp/dictionary.variables', 'w')
-                    variable = ' '.join([var, '=', value])
-                    dictionary.write(variable)
-                    dictionary.write("\n")
-                    dictionary.close()
-                except FileNotFoundError:
-                    if lang == 'ca':
-                        print('El fitxer dictionary.variables no ha estat trobat')
-                    else:
-                        print('The file dictionary.variables has not been found')
-
-            except IndexError:
-                print('You have not entered all the variable parts!')
-
-
-        
         while True:
             inp = input("> ")
             logging.info(' Input: ' + inp)
@@ -410,9 +391,6 @@ You can encrypt a message writing "encrypt <message>"''')
                 else:
                     pass
 
-            elif "!." in shell:
-                variable(shell[1], shell[3])
-            
             elif "see" and "variables" in shell or "mostra" and "variables" in shell:
                 seedictionary = open('tmp/dictionary.variables', 'r')
                 print(seedictionary.read())
