@@ -113,11 +113,11 @@ if __name__ == "__main__":
             if sys.argv[1] == 'http' or sys.argv[1] == 'httpd' or sys.argv[1] == 'server':
                 run()
             elif sys.argv[1] == 'class':
-                classe = Classe()
+                classe = Class()
             elif sys.argv[1] == 'classes':
                 try:
                     while True:
-                        classe = Classe()
+                        classe = Class()
                 except EOFError:
                     pass
                 except KeyboardInterrupt:
@@ -306,11 +306,13 @@ You can encrypt a message writing "encrypt <message>"''')
                                         print(ftp.rmd(shell[1]))
                                     elif "size" in shell:
                                         print(ftp.size(shell[1]))
+                                    elif "list" in shell:
+                                        print(ftp.nlst())
 
                                     else:
                                         print('500 Unknown command')
                                 except IndexError:
-                                    print('500 Unknown command')
+                                    pass
                     except EOFError:
                         pass
                     except KeyboardInterrupt:
