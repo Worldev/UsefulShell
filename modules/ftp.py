@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import logging, logging.handlers
 import logging.config
-from ftplib import FTP
+from ftplib import *
 
 
-class ftp:
+class FTPConnect:
 
     """ Connects to an ftp server """
     def __init__(self, host, port, user, passwd):

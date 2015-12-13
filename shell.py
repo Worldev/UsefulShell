@@ -29,7 +29,7 @@ if __name__ == "__main__":
             import base64
             import inspect
             import builtins
-            from ftplib import FTP
+            from ftplib import *
             from modules.ftp import *
             from modules.httpd import *
             from modules.group import *
@@ -63,7 +63,7 @@ if __name__ == "__main__":
                 except KeyboardInterrupt:
                     pass
             elif sys.argv[1] == 'ftp':
-                ftp(shell[2], shell[3], shell[4], shell[5])
+                FTPConnect(shell[2], shell[3], shell[4], shell[5])
             else:
                 pass
         except IndexError:
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
             elif "ftp" in shell:
                 try:
-                    ftpserver = ftp(shell[1], int(shell[2]), shell[3], shell[4])
+                    ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
                 except ValueError:
                     print('Syntax: <host> <port> <user> <passwd>')
 
