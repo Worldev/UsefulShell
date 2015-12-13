@@ -63,7 +63,7 @@ if __name__ == "__main__":
                 except KeyboardInterrupt:
                     pass
             elif sys.argv[1] == 'ftp':
-                FTPConnect(shell[2], shell[3], shell[4], shell[5])
+                FTPConnect(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
             else:
                 pass
         except IndexError:
