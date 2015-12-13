@@ -1,4 +1,5 @@
 import webbrowser
+import os
 
 def work_web():
     """ Inputs a website and saves it to tmp/url_work.txt """
