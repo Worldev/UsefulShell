@@ -61,17 +61,17 @@ class FTPConnect:
                                  print(ftp.rmd(shell[1]))
                             elif "size" in shell:
                                 print(ftp.size(shell[1]))
-
+                            #elif "edit" in shell:
+                                #print(ftp.retrbinary('RETR '+shell[1],open(shell[1],'wb').write))
+                            elif inp == "":
+                                continue
                             else:
                                 print('500 Unknown command')
 
                         except IndexError:
                             print('500 Unknown command')
                         except:
-                            if str(resp) == "550 Failed to change directory":
-                                print("550 Failed to change directory")
-                            else:
-                                print("550 Error")
+                            print("550 Error")
             except EOFError:
                 pass
             except KeyboardInterrupt:
