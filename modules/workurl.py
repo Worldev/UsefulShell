@@ -24,6 +24,7 @@ def work_web():
             document = open('tmp/url_work.txt', 'w')
             document.write(work_url)
             document.close()
+            webbrowser.open('http://' + work_url)
         else:
             webbrowser.open('http://' + work_url) #work link
     except NameError:
