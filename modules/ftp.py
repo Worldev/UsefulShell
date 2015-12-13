@@ -20,7 +20,7 @@ class FTPConnect:
             ftp.retrlines('LIST')
             try:
                 while True:
-                    inp = input('ftp ' + ftp.pwd() + '> ')
+                    inp = input(self.user + '@' + self.host + " " + ftp.pwd() + '> ')
                     shell = inp.split()
                     ftplog.info(inp)
                     try:
@@ -61,15 +61,24 @@ class FTPConnect:
                                  print(ftp.rmd(shell[1]))
                             elif "size" in shell:
                                 print(ftp.size(shell[1]))
-                            #elif "edit" in shell:
-                                #print(ftp.retrbinary('RETR '+shell[1],open(shell[1],'wb').write))
                             elif inp == "":
                                 continue
+                            #elif "upload" in shell:
+                                #try:
+                                    #file = open(shell[1], 'rb')
+                                    #print(ftp.storbinary('STOR ' + shell[1], file))
+                                    #file.close()
+                                #except IndexError:
+                                    #print("Syntax: upload <path_to_file>")
+
                             else:
                                 print('500 Unknown command')
 
                         except IndexError:
-                            print('500 Unknown command')
+                            if shell[0] == "upload":
+                                print("Syntax: upload <path_to_file>")
+                            else:
+                                print('500 Unknown command')
                         except:
                             print("550 Error")
             except EOFError:
