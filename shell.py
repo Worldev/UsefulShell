@@ -93,7 +93,8 @@ if __name__ == "__main__":
 
 
         while True:
-            inp = input(os.getcwd() + "> ")
+            direct = os.getcwd()
+            inp = input(direct + "> ")
             shell = inp.split()
             if shell[0] == "ftp":
                 loglist = [shell[0], shell[1], shell[2], shell[3], '*' * len(shell[4])]
@@ -114,6 +115,9 @@ if __name__ == "__main__":
                     print('Session End.')
                     exit()
                 break
+
+            elif "cd" in shell:
+                direct = os.path.abspath(os.path.join(shell[1], os.pardir))
 
             elif "ftp" in shell:
                 try:
