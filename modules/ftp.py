@@ -63,7 +63,7 @@ class FTPConnect:
                                 print(ftp.size(shell[1]))
                             elif inp == "":
                                 continue
-                            #elif "upload" in shell:
+                            #elif "upload" in shell: Trying to upload...
                                 #try:
                                     #file = open(shell[1], 'rb')
                                     #print(ftp.storbinary('STOR ' + shell[1], file))
