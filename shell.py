@@ -123,13 +123,13 @@ if __name__ == "__main__":
             elif "cd" in shell:
                 direct = os.path.abspath(os.path.join(shell[1], os.pardir))
 
-            elif "ftp" in shell:
+            elif shell[0] == "ftp":
                 try:
                     ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
                 except ValueError:
                     print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
 
-            elif "feina" in shell or "work" in shell:
+            elif inp == "feina" or inp == "work":
                 work_web()
 
 
@@ -137,7 +137,10 @@ if __name__ == "__main__":
                 webbrowser.open('https://mail.google.com')
             
             elif "ajuda" in shell or "help" in shell:
-                ajuda()
+                try:
+                    ajuda(shell[1])
+                except IndexError:
+                    ajuda(None)
   
             elif "*" in shell:
                 try:

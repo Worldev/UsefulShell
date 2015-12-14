@@ -5,10 +5,10 @@ from ftplib import *
 from modules.colors import *
 
 
-
 class FTPConnect:
 
-    """ Connects to an ftp server """
+    """ Connects to an ftp server.
+     Syntax: <host> <port> <user> <password>"""
     def __init__(self, host, port, user, passwd):
         """  Connection to ftp __init__ """
         ftplog = logging.getLogger('ftpserver')

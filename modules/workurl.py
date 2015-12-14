@@ -2,7 +2,7 @@ import webbrowser
 import os
 
 def work_web():
-    """ Inputs a website and saves it to tmp/url_work.txt """
+    """ Opens a website and saves it to tmp/url_work.txt if wanted """
     if lang == 'ca':
         listdir = os.listdir('tmp')
         if 'url_work.txt' in listdir:

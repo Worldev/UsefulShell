@@ -1,4 +1,5 @@
 class bcolors:
+    """ Changes the colour of the text"""
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
