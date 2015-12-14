@@ -70,7 +70,7 @@ if __name__ == "__main__":
         except IndexError:
             pass
 
-        print('OS: ' + platform.system() + ' --> Init time: ' + time.asctime())
+        print(bcolors.HEADER + 'OS: %s --> Init time: %s' % (platform.system(), time.asctime()) + bcolors.ENDC )
         logging.basicConfig(filename='tmp/shell_log.log', level=logging.INFO)
         logging.info(' Initialization time: ' + time.asctime())
         logging.info(' OS: ' + platform.system())
