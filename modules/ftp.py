@@ -2,6 +2,8 @@
 import logging, logging.handlers
 import logging.config
 from ftplib import *
+from modules.colors import *
+
 
 
 class FTPConnect:
@@ -24,7 +26,7 @@ class FTPConnect:
                     shell = inp.split()
                     ftplog.info(inp)
                     try:
-                        print(ftp.sendcmd(inp))
+                        print(bcolors.OKGREEN + ftp.sendcmd(inp) + bcolors.ENDC)
                     except:
                         try:
                             if "retrbinary" in shell:
@@ -72,15 +74,15 @@ class FTPConnect:
                                     #print("Syntax: upload <path_to_file>")
 
                             else:
-                                print('500 Unknown command')
+                                print(bcolors.FAIL + '500 Unknown command' + bcolors.ENDC)
 
                         except IndexError:
                             if shell[0] == "upload":
                                 print("Syntax: upload <path_to_file>")
                             else:
-                                print('500 Unknown command')
+                                print(bcolors.FAIL + '500 Unknown command' + bcolors.ENDC)
                         except:
-                            print("550 Error")
+                            print(bcolors.FAIL + "550 Error" + bcolors.ENDC)
             except EOFError:
                 pass
             except KeyboardInterrupt:
