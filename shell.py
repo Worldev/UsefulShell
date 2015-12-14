@@ -216,7 +216,13 @@ if __name__ == "__main__":
                         print('You can not rest letters')
                     
             elif ">" in shell or "<" in shell or "==" in shell:
-                true_false = eval(inp)
+                try:
+                    true_false = eval(inp)
+                except:
+                    if lang == 'ca':
+                        print("Has introduït un caràcter no numèric. Només s'accepten nombres (positius i negatius)")
+                    else:
+                        print("You have introduced a non-numeric character. Only numeric characters are accepted (positive and negative)")
                 if lang == 'ca':
                     if true_false == True:
                         print('La operació %s és certa' % inp)
