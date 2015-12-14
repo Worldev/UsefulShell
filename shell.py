@@ -8,6 +8,7 @@ __version__ = "dev"
 __maintainer__ = "Miquel Comas"
 __email__ = "usefulshellproject@gmail.com"
 __status__ = "Development"
+
 if __name__ == "__main__":
     try:
         try:
@@ -38,8 +39,8 @@ if __name__ == "__main__":
             from modules.ping import *
             from modules.delete import *
             from modules.workurl import *
+            from modules.colors import *
 
-            
         except ImportError:
             print('A module has failed to load')
             exit()
@@ -126,7 +127,7 @@ if __name__ == "__main__":
                 try:
                     ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
                 except ValueError:
-                    print('Syntax: <host> <port> <user> <passwd>')
+                    print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
 
             elif "feina" in shell or "work" in shell:
                 work_web()
