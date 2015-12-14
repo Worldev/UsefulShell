@@ -131,6 +131,8 @@ if __name__ == "__main__":
                     print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
                 except ConnectionRefusedError:
                     print(bcolors.FAIL + 'Connection refused' + bcolors.ENDC)
+                except IndexError:
+                    pass
 
             elif inp == "feina" or inp == "work":
                 work_web()
@@ -306,7 +308,7 @@ if __name__ == "__main__":
                 else:
                     print('This is not a known command!')
 
-                
+
     except KeyboardInterrupt:
         print('Session has ended because Ctrl-C has been pressed')
         

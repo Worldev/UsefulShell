@@ -22,7 +22,7 @@ class FTPConnect:
             ftp.retrlines('LIST')
             try:
                 while True:
-                    inp = input(self.user + '@' + self.host + " " + ftp.pwd() + '> ')
+                    inp = input(bcolors.HEADER + self.user + '@' + self.host + " " + ftp.pwd() + '> ' + bcolors.ENDC)
                     shell = inp.split()
                     ftplog.info(inp)
                     try:
