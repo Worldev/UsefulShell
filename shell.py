@@ -238,13 +238,13 @@ if __name__ == "__main__":
                 else:
                     print('Language: English')
             elif inp == "canviar llengua" or inp == "canviar idioma":
-                lang = 'en'
+                builtins.lang = 'en'
                 if lang == 'en':
                     print('Language changed')
                 else:
                     continue
             elif inp == "change language":
-                lang = 'ca'
+                builtins.lang = 'ca'
                 if lang == 'ca':
                     print('Idioma canviat')
                 else:
