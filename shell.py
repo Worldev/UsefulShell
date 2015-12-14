@@ -128,6 +128,8 @@ if __name__ == "__main__":
                     ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
                 except ValueError:
                     print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
+                except ConnectionRefusedError:
+                    print(bcolors.FAIL + 'Connection refused' + bcolors.ENDC)
 
             elif inp == "feina" or inp == "work":
                 work_web()
