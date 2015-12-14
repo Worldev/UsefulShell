@@ -1,5 +1,5 @@
 # UsefulShell  ![Travis](https://travis-ci.org/mikicat/UsefulShell.svg)
-## Python 3.5 needed
+## [Python 3.5](https://python.org/downloads/) needed
 A useful shell that you can customize.
 Licensed on [GPLv3](LICENSE). 
 
