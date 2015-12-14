@@ -2,7 +2,7 @@
 # Python 3.5 needed
 __author__ = "Miquel Comas (Mikicat)"
 __copyright__ = "Copyright 2015, The UsefulShell Project"
-__credits__ = ["Miquel Comas (Mikicat)", "JeDa"]
+__credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
 __version__ = "dev"
 __maintainer__ = "Miquel Comas"
