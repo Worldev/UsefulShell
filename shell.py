@@ -81,7 +81,8 @@ if __name__ == "__main__":
             pass
             
         if lang == 'ca':
-            print('Benvinguts a la consola d\'ajuda en desenvolupament a partir de Python 3.5.' + "\n" + 'Escriviu ajuda o help per a obtenir ajuda' + "\n")
+            print(bcolors.HEADER + 'Benvinguts a la consola d\'ajuda en desenvolupament a partir de Python 3.5.')
+            print('Escriviu ajuda o help per a obtenir ajuda' + "\n" + bcolors.ENDC)
             logging.info(' Language: ' + lang)
         else:
             print('Welcome to the helping shell in development based off Python 3.5.' + "\n" + 'Type help to obtain help' + "\n")
@@ -95,7 +96,7 @@ if __name__ == "__main__":
 
         while True:
             direct = os.getcwd()
-            inp = input(direct + "> ")
+            inp = input(bcolors.OKGREEN + direct + "> " + bcolors.ENDC)
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -123,7 +124,7 @@ if __name__ == "__main__":
             elif "cd" in shell:
                 direct = os.path.abspath(os.path.join(shell[1], os.pardir))
 
-            elif shell[0] == "ftp":
+            elif "ftp" in shell and "ftp" not in shell[1]:
                 try:
                     ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
                 except ValueError:
