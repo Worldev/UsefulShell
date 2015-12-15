@@ -31,15 +31,7 @@ if __name__ == "__main__":
             import inspect
             import builtins
             from ftplib import *
-            from modules.ftp import *
-            from modules.httpd import *
-            from modules.group import *
-            from modules.encoding import *
-            from modules.help import *
-            from modules.ping import *
-            from modules.delete import *
-            from modules.workurl import *
-            from modules.colors import *
+            from modules import *
 
         except ImportError:
             print('A module has failed to load')
