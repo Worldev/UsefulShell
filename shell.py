@@ -34,7 +34,7 @@ if __name__ == "__main__":
             from modules import *
 
         except ImportError:
-            print('A module has failed to load')
+            print('WARNING: A module has failed to load')
             exit()
 
         try:
