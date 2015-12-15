@@ -103,7 +103,7 @@ if __name__ == "__main__":
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
                 del shell[0]
                 print(' '.join(shell))
-            elif "search" or "busca" in shell:
+            elif "search" or "busca" or "cerca" in shell:
                 del shell[0]
                 search('+'.join(shell))
             
