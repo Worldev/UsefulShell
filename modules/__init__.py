@@ -7,3 +7,4 @@ from modules.help import *
 from modules.httpd import *
 from modules.ping import *
 from modules.workurl import *
+from modules.search import *
