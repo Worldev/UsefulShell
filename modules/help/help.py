@@ -51,6 +51,8 @@ You can encrypt a message writing "encrypt <message>"''')
         print(ping.__doc__)
     elif cosa == 'feina' or cosa == 'work':
         print(work_web.__doc__)
+    elif cosa == 'cerca' or cosa == 'search':
+        print(search.__doc__)
     else:
         pass
 

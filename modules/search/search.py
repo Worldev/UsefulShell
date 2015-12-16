@@ -2,6 +2,7 @@ import urllib, urllib.parse, urllib.request
 import json
 
 def search(search_string):
+    """Search a query to Google"""
     query = urllib.parse.urlencode({'q': search_string})
     url = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&%s&rsz=large' % query
     search_response = urllib.request.urlopen(url)
