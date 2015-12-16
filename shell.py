@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.5
 # Python 3.5 needed
 __author__ = "Miquel Comas (Mikicat)"
 __copyright__ = "Copyright 2015, The UsefulShell Project"
@@ -107,7 +107,7 @@ if __name__ == "__main__":
             
 
             
-            elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell:
+            elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell or "bye" in shell:
                 if lang == 'ca':
                     print('Final de la Sessió.')
                     exit()
@@ -305,9 +305,9 @@ if __name__ == "__main__":
 
             else:
                 if lang == 'ca':
-                    print('Aquesta ordre no s\'ha reconegut!')
+                    print(bcolors.FAIL + 'Aquesta ordre no s\'ha reconegut!' + bcolors.ENDC)
                 else:
-                    print('This is not a known command!')
+                    print(bcolors.FAIL + 'This is not a known command!' + bcolors.ENDC)
 
 
     except KeyboardInterrupt:
