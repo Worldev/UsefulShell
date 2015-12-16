@@ -103,10 +103,9 @@ if __name__ == "__main__":
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
                 del shell[0]
                 print(' '.join(shell))
+
             
-            #elif "search" or "busca" or "cerca" in shell:
-                #del shell[0]
-                #search('+'.join(shell))
+
             
             elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell:
                 if lang == 'ca':
@@ -297,6 +296,10 @@ if __name__ == "__main__":
                         classe = Class()
                 except KeyboardInterrupt:
                     pass
+            elif "search" in shell or "busca" in shell or "cerca" in shell:
+                del shell[0]
+                search('+'.join(shell))
+
 
             else:
                 if lang == 'ca':
