@@ -300,7 +300,7 @@ if __name__ == "__main__":
                 del shell[0]
                 search('+'.join(shell))
             elif "usefulshell" and "logo" in shell or "UsefulShell" and "Logo" in shell or "UsefulShell" and "logo" in shell:
-                webbrowser.open(os.getcwd() + 'images/usefulshell_logo.png')
+                webbrowser.open(os.getcwd() + '/images/usefulshell_logo.png')
 
 
             else:
