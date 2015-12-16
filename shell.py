@@ -299,6 +299,8 @@ if __name__ == "__main__":
             elif "search" in shell or "busca" in shell or "cerca" in shell:
                 del shell[0]
                 search('+'.join(shell))
+            elif "usefulshell" and "logo" in shell or "UsefulShell" and "Logo" in shell or "UsefulShell" and "logo" in shell:
+                webbrowser.open(os.getcwd() + 'images/usefulshell_logo.png')
 
 
             else:
