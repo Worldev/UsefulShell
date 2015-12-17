@@ -45,7 +45,7 @@ class FTPConnect:
                                 print(ftp.ntrasfercmd(shell[1]))
                             elif "mlsd" in shell:
                                 print(ftp.mlsd(path=shell[1], facts=[]))
-                            elif "nlst" in shell:
+                            elif "nlst" in shell or "list" in shell or "ls" in shell:
                                 list = ftp.nlst()
                                 strnlst = "\n".join(list)
                                 print(strnlst)
