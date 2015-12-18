@@ -1,5 +1,5 @@
-# UsefulShell  [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell)
-[![Coverage Status](https://coveralls.io/repos/Worldev/UsefulShell/badge.svg?branch=master&service=github)](https://coveralls.io/github/Worldev/UsefulShell?branch=master)
+# UsefulShell  
+[![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell) [![Coverage Status](https://coveralls.io/repos/Worldev/UsefulShell/badge.svg?branch=master&service=github)](https://coveralls.io/github/Worldev/UsefulShell?branch=master)
 ## [Python 3.5](https://python.org/downloads/) needed
 A useful shell you can customize.
 Licensed on [GPLv3](LICENSE). 
