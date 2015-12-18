@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.5
 # Python 3.5 needed
 __author__ = "Miquel Comas (Mikicat)"
-__copyright__ = "Copyright 2015, The UsefulShell Project"
+__copyright__ = "Copyright 2015, The UsefulShell || A Worldev Project"
 __credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
 __version__ = "1-dev"
