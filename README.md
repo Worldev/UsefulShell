@@ -7,7 +7,7 @@ Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
 
 ### What can you do?
 * You can evaluate simple expressions, such as 5 == 5, 4 > 3, etc.
-* You can also open a port in your localhost (sudo required), and ping websites to see if they are up.
+* You can also open a port in your localhost, and ping websites to see if they are up.
 * You can do basic math operations
 * You can connect to an ftp server! (Still developing it)
 * You can search (search engine: Google)
