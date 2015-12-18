@@ -1,6 +1,6 @@
 # UsefulShell  [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell)
 ## [Python 3.5](https://python.org/downloads/) needed
-A useful shell that you can customize.
+A useful shell you can customize.
 Licensed on [GPLv3](LICENSE). 
 
 Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
