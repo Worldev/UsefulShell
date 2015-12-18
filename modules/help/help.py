@@ -7,6 +7,7 @@ from modules.ping import *
 from modules.delete import *
 from modules.workurl import *
 from modules.colors import *
+from modules.search import *
 
 def ajuda(cosa):
     """ This function displays help when called """
