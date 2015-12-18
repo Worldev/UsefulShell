@@ -1,6 +1,12 @@
 language: python
 python:
   - "3.5"
-script: python3 test/test.py
+install:
+  - pip install coveralls
+  
+script:
+  - python3 test/test.py
+  - coverage run test/test.py
+
 after_success:
   - coveralls
