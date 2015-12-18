@@ -1,4 +1,4 @@
-# UsefulShell  ![Travis](https://travis-ci.org/mikicat/UsefulShell.svg)
+# UsefulShell  [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell)
 ## [Python 3.5](https://python.org/downloads/) needed
 A useful shell that you can customize.
 Licensed on [GPLv3](LICENSE). 
