@@ -1,5 +1,5 @@
 # UsefulShell  
-[![License](https://img.shields.io/github/license/Worldev/JeDaBot.svg)](https://github.com/Worldev/JeDaBot/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/Worldev/UsefulShell.svg)](https://github.com/Worldev/UsefulShell/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell) [![Coverage Status](https://coveralls.io/repos/Worldev/UsefulShell/badge.svg?branch=master&service=github)](https://coveralls.io/github/Worldev/UsefulShell?branch=master)
 ## [Python 3.5](https://python.org/downloads/) needed
 A useful shell you can customize.
