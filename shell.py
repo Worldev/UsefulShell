@@ -5,7 +5,7 @@ __copyright__ = "Copyright 2015, The UsefulShell || A Worldev Project"
 __credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
 __version__ = "1-dev"
-__maintainer__ = "Miquel Comas"
+__maintainer__ = "Miquel Comas (MIkicat), Worldev"
 __email__ = "usefulshellproject@gmail.com"
 __status__ = "Development"
 
