@@ -31,7 +31,7 @@ if __name__ == "__main__":
             import inspect
             import builtins
             from ftplib import *
-            from lib import *
+            from modules import *
 
         except ImportError:
             print('WARNING: A module has failed to load')
