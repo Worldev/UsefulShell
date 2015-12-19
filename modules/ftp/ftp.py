@@ -2,7 +2,7 @@
 import logging, logging.handlers
 import logging.config
 from ftplib import *
-from lib.colors import *
+from modules.colors import *
 
 
 class FTPConnect:
