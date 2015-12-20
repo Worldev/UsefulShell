@@ -296,9 +296,21 @@ if __name__ == "__main__":
             elif "search" in shell or "busca" in shell or "cerca" in shell:
                 del shell[0]
                 search('+'.join(shell))
+                
             elif "usefulshell" and "logo" in shell or "UsefulShell" and "Logo" in shell or "UsefulShell" and "logo" in shell:
                 webbrowser.open(os.getcwd() + '/images/usefulshell_logo.png')
-
+            
+            elif "web" in shell or "browser" in shell or "browse" in shell or "navega" in shell:
+                try:
+                    if not 'http://' in shell[1]:
+                        webbrowser.open('http://' + shell[1])
+                    else:
+                        webbrowser.open(shell[1])
+                except IndexError:
+                    if lang == 'ca':
+                        print("Sintaxi: web/navega <url>")
+                    else:
+                        print("Syntax: web/browser/browse <url>")
 
             else:
                 if lang == 'ca':
