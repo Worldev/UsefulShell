@@ -61,3 +61,6 @@ test/
 
 # Temporal
 tmp/
+
+# Idea
+.idea/
