@@ -41,7 +41,6 @@ if __name__ == "__main__":
             os.mkdir('tmp')
         except FileExistsError:
             pass
-
         try:
             if sys.argv[1] == 'http' or sys.argv[1] == 'httpd' or sys.argv[1] == 'server':
                 run()
@@ -115,6 +114,9 @@ if __name__ == "__main__":
 
             elif "cd" in shell:
                 direct = os.path.abspath(os.path.join(shell[1], os.pardir))
+
+            elif "docs" in shell:
+                webbrowser.open("https://github.com/Worldev/UsefulShell/wiki")
 
             elif "ftp" in shell and "ftp" not in shell[1]:
                 try:
