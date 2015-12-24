@@ -56,49 +56,27 @@ You can encrypt a message writing "encrypt <message>"''')
         print(search.__doc__)
     elif cosa == 'commands':
         print('print/show/echo/mostra/ensenya')
-
         print('stop/exit/finish/end/final/fi/acabar/bye')
-
         print('docs')
-
         print('ftp')
-
         print('feina/work')
-
         print('mirar correu/see mail')
-
         print('ajuda/help')
-
         print('+-*/')
-
         print('clear')
-
         print('lang/idioma/language')
-
         print('canviar llengua/canviar idioma/change language')
-
         print('zen python/Zen Python')
-
         print('ping')
-
         print('http server')
-
         print('history/historial')
-
         print('encrypt/encripta/encode')
-
         print('decrypt/desencripta/decode')
-
         print('delete history/esborrar historial/clear history')
-
         print('registrar classe/register class')
-
         print('registrar classes/register classes')
-
         print('search/busca/cerca')
-
         print('usefulshell logo/UsefulShell Logo/UsefulShell logo')
-
         print('web/browser/browse/navega')
 
     else:
