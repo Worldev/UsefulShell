@@ -32,6 +32,7 @@ if __name__ == "__main__":
             import builtins
             from ftplib import *
             from modules import *
+            import getpass
 
         except ImportError:
             print('WARNING: A module has failed to load')
@@ -87,7 +88,7 @@ if __name__ == "__main__":
 
         while True:
             direct = os.getcwd()
-            inp = input(bcolors.OKGREEN + direct + "> " + bcolors.ENDC)
+            inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node()  +  direct + "> " + bcolors.ENDC)
             shell = inp.split()
             try:
                 if shell[0] == "ftp":

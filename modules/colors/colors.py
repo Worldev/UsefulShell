@@ -1,8 +1,8 @@
-import sys
+import platform
 
 class bcolors:
     """ Changes the colour of the text"""
-    if sys.executable.find('pythonw.exe') == sys.executable.find('WinPy') == -1:
+    if platform.system() == 'Windows':
         HEADER = ''
         OKBLUE = ''
         OKGREEN = ''
