@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
         while True:
             direct = os.getcwd()
-            inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node()  +  direct + "> " + bcolors.ENDC)
+            inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + direct + "> " + bcolors.ENDC)
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -301,7 +301,7 @@ if __name__ == "__main__":
                 search('+'.join(shell))
                 
             elif "usefulshell" and "logo" in shell or "UsefulShell" and "Logo" in shell or "UsefulShell" and "logo" in shell:
-                webbrowser.open(os.getcwd() + '/images/usefulshell_logo.png')
+                webbrowser.open('https://github.com/Worldev/UsefulShell/images/usefulshell_logo.png')
             
             elif "web" in shell or "browser" in shell or "browse" in shell or "navega" in shell:
                 try:
