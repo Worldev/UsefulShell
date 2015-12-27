@@ -13,3 +13,4 @@ Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
 * You can connect to an ftp server! (Still developing it)
 * You can search (search engine: Google)
 * ...
+###For Windows users we highly recommend having [Git for Windows](https://git-scm.com/download/win) installed.
