@@ -288,7 +288,7 @@ if __name__ == "__main__":
                 else:
                     pass
 
-            elif "zen" and "python" in shell or "Zen" and "Python" in shell:
+            elif "zen" in shell or "Zen" in shell:
                 import this
 
             elif "ping" in shell:
