@@ -119,8 +119,13 @@ if __name__ == "__main__":
             elif "cd" in shell:
                 try:
                     try:
-                        directcd = dircd + '\%s' % shell[1]
-                        os.chdir(directcd)
+                        if shell[1] == '..':
+                            directcd = os.path.abspath(os.path.join(dircd, os.pardir))
+                        elif shell[1] == '.':
+                            directcd = dircd
+                        else:
+                            directcd = dircd + '\%s' % shell[1]
+                            os.listdir(directcd)
                     except FileNotFoundError:
                         print('The system cannot find the file/directory specified')
                 except IndexError:
