@@ -87,8 +87,11 @@ if __name__ == "__main__":
 
 
         while True:
-            direct = os.getcwd()
-            inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + direct + "> " + bcolors.ENDC)
+            try:
+                dircd = directcd
+            except NameError:
+                dircd = os.path.expanduser('~')
+            inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + dircd + "> " + bcolors.ENDC)
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -114,7 +117,18 @@ if __name__ == "__main__":
                 break
 
             elif "cd" in shell:
-                direct = os.path.abspath(os.path.join(shell[1], os.pardir))
+                try:
+                    try:
+                        directcd = dircd + '\%s' % shell[1]
+                        os.chdir(directcd)
+                    except FileNotFoundError:
+                        print('The system cannot find the file/directory specified')
+                except IndexError:
+                    print("cd where?")
+
+            elif "ls" in shell or "list" in shell or "llista" in shell:
+                lsdir = os.listdir(dircd)
+                print("\n".join(lsdir))
 
             elif "docs" in shell:
                 webbrowser.open("https://github.com/Worldev/UsefulShell/wiki")
