@@ -62,7 +62,16 @@ if __name__ == "__main__":
         except IndexError:
             pass
 
+        day = time.strftime("%d")
+        month = time.strftime("%B")
+        year = time.strftime("%Y")
         print(bcolors.HEADER + 'OS: %s --> Init time: %s' % (platform.system(), time.asctime()) + bcolors.ENDC )
+        if day == "25" and month == "December":
+            print("Merry Christmas!")
+        elif day == "1" and month == "January":
+            print("Happy", year, "!")
+        else:
+            pass
         logging.basicConfig(filename='tmp/shell_log.log', level=logging.INFO)
         logging.info(' Initialization time: ' + time.asctime())
         logging.info(' OS: ' + platform.system())
