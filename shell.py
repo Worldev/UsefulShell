@@ -69,7 +69,7 @@ if __name__ == "__main__":
         if day == "25" and month == "December":
             print("Merry Christmas!")
         elif day == "1" and month == "January":
-            print("Happy", year, "!")
+            print("Happy new", year, "!")
         else:
             pass
         logging.basicConfig(filename='tmp/shell_log.log', level=logging.INFO)
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
         while True:
             try:
-                dircd = directcd
+                dircd = newcd
             except NameError:
                 dircd = os.path.expanduser('~')
             inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + dircd + "> " + bcolors.ENDC)
@@ -129,12 +129,12 @@ if __name__ == "__main__":
                 try:
                     try:
                         if shell[1] == '..':
-                            directcd = os.path.abspath(os.path.join(dircd, os.pardir))
+                            newcd = os.path.abspath(os.path.join(dircd, os.pardir))
                         elif shell[1] == '.':
-                            directcd = dircd
+                            newcd = dircd
                         else:
-                            directcd = dircd + '\%s' % shell[1]
-                            os.listdir(directcd)
+                            newcd = dircd + '\%s' % shell[1]
+                            os.listdir(newcd)
                     except FileNotFoundError:
                         print('The system cannot find the file/directory specified')
                 except IndexError:
@@ -343,11 +343,21 @@ if __name__ == "__main__":
                     else:
                         print("Syntax: web/browser/browse <url>")
 
+
+
             else:
-                if lang == 'ca':
-                    print(bcolors.FAIL + 'Aquesta ordre no s\'ha reconegut!' + bcolors.ENDC)
-                else:
-                    print(bcolors.FAIL + 'This is not a known command!' + bcolors.ENDC)
+                try:
+                    retcode = subprocess.call(inp, shell=True)
+                    if retcode < 0:
+                        print("Child was terminated by signal", -retcode, file=sys.stderr)
+                    else:
+                        print("Child returned", retcode, file=sys.stderr)
+                except OSError as e:
+                    print("Execution failed:", e, file=sys.stderr)
+                    if lang == 'ca':
+                        print(bcolors.FAIL + 'Aquesta ordre no s\'ha reconegut!' + bcolors.ENDC)
+                    else:
+                        print(bcolors.FAIL + 'This is not a known command!' + bcolors.ENDC)
 
 
     except KeyboardInterrupt:
