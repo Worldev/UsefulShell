@@ -5,7 +5,7 @@ __copyright__ = "Copyright 2015, The UsefulShell || A Worldev Project"
 __credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
 __version__ = "1"
-__maintainer__ = "Miquel Comas (MIkicat), Worldev"
+__maintainer__ = "Miquel Comas (Mikicat), Worldev"
 __email__ = "usefulshellproject@gmail.com"
 __status__ = "Development"
 
@@ -111,7 +111,20 @@ if __name__ == "__main__":
                     logging.info(' Input: ' + inp)
             except IndexError:
                 pass
-            
+            try:
+                if "ftp" == shell[0]:
+                    try:
+                        ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
+                    except ValueError:
+                        print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
+                    except ConnectionRefusedError:
+                        print(bcolors.FAIL + 'Connection refused' + bcolors.ENDC)
+                    except IndexError:
+                        pass
+                else:
+                    pass
+            except IndexError:
+                pass
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
                 del shell[0]
                 print(' '.join(shell))
@@ -146,16 +159,6 @@ if __name__ == "__main__":
 
             elif "docs" in shell:
                 webbrowser.open("https://github.com/Worldev/UsefulShell/wiki")
-
-            elif "ftp" in shell and "ftp" not in shell[1]:
-                try:
-                    ftpserver = FTPConnect(shell[1], int(shell[2]), shell[3], shell[4])
-                except ValueError:
-                    print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
-                except ConnectionRefusedError:
-                    print(bcolors.FAIL + 'Connection refused' + bcolors.ENDC)
-                except IndexError:
-                    pass
 
             elif inp == "feina" or inp == "work":
                 work_web()
@@ -351,7 +354,8 @@ if __name__ == "__main__":
                     if retcode < 0:
                         print("Child was terminated by signal", -retcode, file=sys.stderr)
                     else:
-                        print("Child returned", retcode, file=sys.stderr)
+                        #print("Child returned", retcode, file=sys.stderr)
+                        pass
                 except OSError as e:
                     print("Execution failed:", e, file=sys.stderr)
                     if lang == 'ca':
