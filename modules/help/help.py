@@ -54,7 +54,7 @@ You can encrypt a message writing "encrypt <message>"''')
         print(work_web.__doc__)
     elif cosa == 'cerca' or cosa == 'search':
         print(search.__doc__)
-    elif cosa == 'commands':
+    elif cosa == 'commands' or cosa == 'ordres':
         print('print/show/echo/mostra/ensenya')
         print('stop/exit/finish/end/final/fi/acabar/bye')
         print('docs')
