@@ -89,6 +89,7 @@ if __name__ == "__main__":
             print('Welcome to the helping shell in development based off Python 3.5.' + "\n" + 'Type help to obtain help' + "\n")
             logging.info(' Language: ' + lang)
 
+        first_run()
 
         def clear():
             """ This function "clears" the screen by printing 100 "\n" """
