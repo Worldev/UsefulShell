@@ -105,7 +105,7 @@ if __name__ == "__main__":
             if "cd" in inp:
                 pass
             else:
-                inp = inp.lower()
+                np = inp.lower()
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -383,4 +383,4 @@ if __name__ == "__main__":
         print('Session has ended because Ctrl-C has been pressed')
         
 else:
-    exit()
+    print('Shell: I\'m not supposed to be included!')
