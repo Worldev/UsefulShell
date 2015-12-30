@@ -102,7 +102,10 @@ if __name__ == "__main__":
             except NameError:
                 dircd = os.path.expanduser('~')
             inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + dircd + "> " + bcolors.ENDC)
-            inp = inp.lower()
+            if "cd" in inp:
+                pass
+            else:
+                inp = inp.lower()
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -149,11 +152,11 @@ if __name__ == "__main__":
                             newcd = dircd
                         else:
                             if platform.system() == 'Windows':
+                                os.listdir(dircd + '\%s' % shell[1])
                                 newcd = dircd + '\%s' % shell[1]
-                                os.listdir(newcd)
                             else:
+                                os.listdir(dircd + '/%s' % shell[1])
                                 newcd = dircd + '/%s' % shell[1]
-                                os.listdir(newcd)
                     except FileNotFoundError:
                         print('The system cannot find the file/directory specified')
                 except IndexError:
