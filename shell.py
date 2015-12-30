@@ -102,6 +102,7 @@ if __name__ == "__main__":
             except NameError:
                 dircd = os.path.expanduser('~')
             inp = input(bcolors.OKGREEN + getpass.getuser() + '@' + platform.node() + ' ' + dircd + "> " + bcolors.ENDC)
+            inp = inp.lower()
             shell = inp.split()
             try:
                 if shell[0] == "ftp":
@@ -147,8 +148,12 @@ if __name__ == "__main__":
                         elif shell[1] == '.':
                             newcd = dircd
                         else:
-                            newcd = dircd + '\%s' % shell[1]
-                            os.listdir(newcd)
+                            if platform.system() = 'Windows':
+                                newcd = dircd + '\%s' % shell[1]
+                                os.listdir(newcd)
+                            else:
+                                newcd = dircd + '/%s' % shell[1]
+                                os.listdir(newcd)
                     except FileNotFoundError:
                         print('The system cannot find the file/directory specified')
                 except IndexError:
@@ -163,7 +168,6 @@ if __name__ == "__main__":
 
             elif inp == "feina" or inp == "work":
                 work_web()
-
 
             elif "mirar" and "correu" in shell or "see" and "mail" in shell:
                 webbrowser.open('https://mail.google.com')
@@ -292,7 +296,7 @@ if __name__ == "__main__":
                 else:
                     pass
 
-            elif "zen" in shell or "Zen" in shell:
+            elif "zen" in shell:
                 import this
 
             elif "ping" in shell:
@@ -332,7 +336,7 @@ if __name__ == "__main__":
                 del shell[0]
                 search('+'.join(shell))
                 
-            elif "usefulshell" and "logo" in shell or "UsefulShell" and "Logo" in shell or "UsefulShell" and "logo" in shell:
+            elif "usefulshell" and "logo" in shell:
                 webbrowser.open('https://github.com/Worldev/UsefulShell/images/usefulshell_logo.png')
             
             elif "web" in shell or "browser" in shell or "browse" in shell or "navega" in shell:
