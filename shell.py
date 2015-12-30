@@ -148,7 +148,7 @@ if __name__ == "__main__":
                         elif shell[1] == '.':
                             newcd = dircd
                         else:
-                            if platform.system() = 'Windows':
+                            if platform.system() == 'Windows':
                                 newcd = dircd + '\%s' % shell[1]
                                 os.listdir(newcd)
                             else:
@@ -160,8 +160,15 @@ if __name__ == "__main__":
                     print("cd where?")
 
             elif "ls" in shell or "list" in shell or "llista" in shell:
-                lsdir = os.listdir(dircd)
-                print("\n".join(lsdir))
+                if platform.system() == 'Windows':
+                    lsdir = os.listdir(dircd)
+                    print("\n".join(lsdir))
+                else:
+                    if "ls" in shell:
+                        subprocess.call(shell)
+                    else:
+                        lsdir = os.listdir(dircd)
+                        print("\n".join(lsdir))
 
             elif "docs" in shell:
                 webbrowser.open("https://github.com/Worldev/UsefulShell/wiki")
