@@ -93,9 +93,8 @@ if __name__ == "__main__":
         first_run()
 
         def clear():
-            """ This function "clears" the screen by printing 100 "\n" """
-            print("\n" * 100)
-
+            os.system('cls' if os.name=='nt' else 'clear')
+            return ''
 
         while True:
             try:
@@ -184,7 +183,7 @@ if __name__ == "__main__":
             elif inp == "feina" or inp == "work":
                 work_web()
 
-            elif "mirar" and "correu" in shell or "see" and "mail" in shell:
+            elif "mirar" and "correu" in shell or "check" and "mail" in shell:
                 webbrowser.open('https://mail.google.com')
             
             elif "ajuda" in shell or "help" in shell:
