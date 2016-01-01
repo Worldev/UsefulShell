@@ -1,7 +1,7 @@
 # UsefulShell  
 [![License](https://img.shields.io/github/license/Worldev/UsefulShell.svg)](https://github.com/Worldev/UsefulShell/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell) [![Code Health](https://landscape.io/github/Worldev/UsefulShell/master/landscape.svg?style=flat)](https://landscape.io/github/Worldev/UsefulShell/master)
-## [Python 3.5](https://python.org/downloads/) needed (Linux installation explained in [![Docs]](https://github.com/Worldev/UsefulShell/wiki/Docs))
+## [Python 3.5](https://python.org/downloads/) needed (Linux installation explained in [Docs](https://github.com/Worldev/UsefulShell/wiki/Docs))
 A useful shell you can customize.
 
 Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
