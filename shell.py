@@ -33,6 +33,7 @@ if __name__ == "__main__":
             from ftplib import *
             from modules import *
             import getpass
+            import datetime
 
         except ImportError:
             print('WARNING: A module has failed to load')
@@ -63,12 +64,12 @@ if __name__ == "__main__":
             pass
 
         day = time.strftime("%d")
-        month = time.strftime("%B")
+        month = time.strftime("%b")
         year = time.strftime("%Y")
         print(bcolors.HEADER + 'OS: %s --> Init time: %s' % (platform.system(), time.asctime()) + bcolors.ENDC)
-        if day == "25" and month == "December":
+        if day == "25" and month == "Dec":
             print("Merry Christmas!")
-        elif day == "1" and month == "January":
+        elif day == "01" and month == "Jan":
             print("Happy new", year, "!")
         else:
             pass
@@ -150,6 +151,8 @@ if __name__ == "__main__":
                             newcd = os.path.abspath(os.path.join(dircd, os.pardir))
                         elif shell[1] == '.':
                             newcd = dircd
+                        elif ':' in shell[1]:
+                            dircd = shell[1]
                         else:
                             if platform.system() == 'Windows':
                                 os.listdir(dircd + '\%s' % shell[1])
@@ -159,6 +162,8 @@ if __name__ == "__main__":
                                 newcd = dircd + '/%s' % shell[1]
                     except FileNotFoundError:
                         print('The system cannot find the file/directory specified')
+                    except OSError:
+                        print('There was a problem')
                 except IndexError:
                     print("cd where?")
 
