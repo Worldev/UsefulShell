@@ -134,13 +134,13 @@ if __name__ == "__main__":
                 del shell[0]
                 print(' '.join(shell))
 
-            elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell or "bye" in shell:
+            elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell or "bye" in shell or "quit" in shell:
                 if lang == 'ca':
                     print('Final de la Sessió.')
-                    exit()
+                    exit(0)
                 else:
                     print('Session End.')
-                    exit()
+                    exit(0)
                 break
 
             elif "cd" in shell:
@@ -184,7 +184,7 @@ if __name__ == "__main__":
                 work_web()
 
             elif "mirar" and "correu" in shell or "check" and "mail" in shell:
-                webbrowser.open('https://mail.google.com')
+                mail()
             
             elif "ajuda" in shell or "help" in shell:
                 try:

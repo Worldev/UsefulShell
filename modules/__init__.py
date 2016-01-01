@@ -9,3 +9,4 @@ from modules.ping import *
 from modules.workurl import *
 from modules.search import *
 from modules.first_run_git import *
+from modules.mail import *

@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-from modules.ftp import *
-from modules.httpd import *
-from modules.group import *
-from modules.encoding import *
-from modules.ping import *
-from modules.delete import *
-from modules.workurl import *
-from modules.colors import *
-from modules.search import *
+from modules import *
 
 def ajuda(cosa):
     """ This function displays help when called """
@@ -54,9 +46,11 @@ You can encrypt a message writing "encrypt <message>"''')
         print(work_web.__doc__)
     elif cosa == 'cerca' or cosa == 'search':
         print(search.__doc__)
+    elif cosa == 'mail' or cosa == 'correu':
+        print(mail.__doc__)
     elif cosa == 'commands' or cosa == 'ordres':
         print('print/show/echo/mostra/ensenya')
-        print('stop/exit/finish/end/final/fi/acabar/bye')
+        print('stop/exit/finish/end/final/fi/acabar/bye/quit')
         print('docs')
         print('ftp')
         print('feina/work')
@@ -66,7 +60,7 @@ You can encrypt a message writing "encrypt <message>"''')
         print('clear')
         print('lang/idioma/language')
         print('canviar llengua/canviar idioma/change language')
-        print('zen python/Zen Python')
+        print('zen python')
         print('ping')
         print('http server')
         print('history/historial')
@@ -76,7 +70,7 @@ You can encrypt a message writing "encrypt <message>"''')
         print('registrar classe/register class')
         print('registrar classes/register classes')
         print('search/busca/cerca')
-        print('usefulshell logo/UsefulShell Logo/UsefulShell logo')
+        print('usefulshell logo')
         print('web/browser/browse/navega')
 
     else:
