@@ -13,7 +13,7 @@ def mail():
             save = save.lower()
     else:
         listdir = os.listdir('tmp')
-        if 'url_work.txt' in listdir:
+        if 'url_mail.txt' in listdir:
             work_url = open('tmp/url_mail.txt', 'r').read()
         else:
             work_url = input('Url (without http://): ')
