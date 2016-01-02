@@ -4,7 +4,7 @@ __author__ = "Miquel Comas (Mikicat)"
 __copyright__ = "Copyright 2015, The UsefulShell || A Worldev Project"
 __credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
-__version__ = "v1.0"
+__version__ = "v1.1"
 __maintainer__ = "Miquel Comas (Mikicat), Worldev"
 __email__ = "usefulshellproject@gmail.com"
 __status__ = "Development"
@@ -125,7 +125,7 @@ if __name__ == "__main__":
                     except ConnectionRefusedError:
                         print(bcolors.FAIL + 'Connection refused' + bcolors.ENDC)
                     except IndexError:
-                        pass
+                        print(bcolors.WARNING + 'Syntax: <host> <port> <user> <passwd>' + bcolors.ENDC)
                 else:
                     pass
             except IndexError:
@@ -314,7 +314,10 @@ if __name__ == "__main__":
                 import this
 
             elif "ping" in shell:
-                ping(shell[1])
+                try:
+                    ping(shell[1])
+                except IndexError:
+                    print('What I\'m supposed to ping?')
             
             elif "http" and "server" in shell:
                 run()
