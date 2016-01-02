@@ -12,6 +12,6 @@ Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
 * You can do basic math operations
 * You can connect to an ftp server! (Still developing it)
 * You can search (search engine: Google)
-* ...
+* [...](https://github.com/Worldev/UsefulShell/wiki)
 
 ###For Windows users we highly recommend having [Git for Windows](https://git-scm.com/download/win) installed.
