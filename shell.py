@@ -373,8 +373,7 @@ if __name__ == "__main__":
                     if retcode < 0:
                         print("Child was terminated by signal", -retcode, file=sys.stderr)
                     else:
-                        #print("Child returned", retcode, file=sys.stderr)
-                        pass
+                        print("Child returned", retcode, file=sys.stderr)
                 except OSError as e:
                     print("Execution failed:", e, file=sys.stderr)
                     if lang == 'ca':
