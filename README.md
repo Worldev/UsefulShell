@@ -1,6 +1,12 @@
 # UsefulShell  
-[![License](https://img.shields.io/github/license/Worldev/UsefulShell.svg)](https://github.com/Worldev/UsefulShell/blob/master/LICENSE)
+
 [![Build Status](https://travis-ci.org/Worldev/UsefulShell.svg)](https://travis-ci.org/Worldev/UsefulShell) [![Code Health](https://landscape.io/github/Worldev/UsefulShell/master/landscape.svg?style=flat)](https://landscape.io/github/Worldev/UsefulShell/master)
+
+    UsefulShell --  Copyright (C) 2016  Miquel Comas (Mikicat) & Worldev
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
 ## [Python 3.5](https://python.org/downloads/) needed (Linux installation explained in [Docs](https://github.com/Worldev/UsefulShell/wiki/Docs#getting-it))
 A useful shell you can customize.
 

@@ -131,8 +131,15 @@ if __name__ == "__main__":
             except IndexError:
                 pass
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
-                del shell[0]
-                print(' '.join(shell))
+                if inp == 'show c':
+                    print("type 'show c all' to display all the conditions, or 'show c short' to display the first point")
+                elif inp == 'show c all':
+                    conditions_all()
+                elif inp == 'show c short':
+                    conditions_short()
+                else:
+                    del shell[0]
+                    print(' '.join(shell))
 
             elif "stop" in shell or "exit" in shell or "finish" in shell or "end" in shell or "final" in shell or "fi" in shell or "acabar" in shell or "bye" in shell or "quit" in shell:
                 if lang == 'ca':
