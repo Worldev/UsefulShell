@@ -24,8 +24,8 @@ def mail():
             document = open('tmp/url_mail.txt', 'w')
             document.write(mail_url)
             document.close()
-            webbrowser.open('http://' + work_url)
+            webbrowser.open('http://' + mail_url)
         else:
-            webbrowser.open('http://' + work_url) #work link
+            webbrowser.open('http://' + mail_url) #work link
     except NameError:
-        webbrowser.open('http://' + work_url) #work link
+        webbrowser.open('http://' + mail_url) #work link
