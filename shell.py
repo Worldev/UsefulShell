@@ -138,6 +138,8 @@ if __name__ == "__main__":
                     conditions_all()
                 elif inp == 'show c short':
                     conditions_short()
+                elif inp == 'show w':
+                    warranty()
                 else:
                     del shell[0]
                     print(' '.join(shell))
