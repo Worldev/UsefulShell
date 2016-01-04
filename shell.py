@@ -4,7 +4,7 @@ __author__ = "Miquel Comas (Mikicat)"
 __copyright__ = "Copyright 2016 Miquel Comas (Mikicat) & Worldev"
 __credits__ = ["Miquel Comas (Mikicat)", "JeDa", "NeoMahler"]
 __license__ = "GPLv3"
-__version__ = "v1.1"
+__version__ = "v1.1.1"
 __maintainer__ = "Miquel Comas (Mikicat), Worldev"
 __email__ = "usefulshellproject@gmail.com"
 __status__ = "Development"
@@ -84,10 +84,11 @@ if __name__ == "__main__":
             
         if lang == 'ca':
             print(bcolors.HEADER + 'Benvinguts a la consola d\'ajuda en desenvolupament a partir de Python 3.5.')
-            print('Escriviu ajuda o help per a obtenir ajuda' + "\n" + bcolors.ENDC)
+            print('Escriviu ajuda o help per a obtenir ajuda' + "\n" 'Escriu "show c" per veure les condicions de llicència, o "show w" per veure la garantia' + bcolors.ENDC)
             logging.info(' Language: ' + lang)
         else:
-            print('Welcome to the helping shell in development based off Python 3.5.' + "\n" + 'Type help to obtain help' + "\n")
+            print(bcolors.HEADER + 'Welcome to the helping shell in development based off Python 3.5.')
+            print('Type "help" to obtain help' + "\n" + 'Type "show c" to see the License conditions, or "show w" to see the warranty' + bcolors.ENDC)
             logging.info(' Language: ' + lang)
 
         first_run()

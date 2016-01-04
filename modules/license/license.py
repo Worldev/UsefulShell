@@ -204,7 +204,7 @@ terms of section 4, provided that you also meet all of these conditions:''')
     interfaces that do not display Appropriate Legal Notices, your
     work need not make them do so.''')
     input("Press Enter to continue...")
-     print('''
+    print('''
 
   A compilation of a covered work with other separate and independent
 works, which are not by their nature extensions of the covered work,
