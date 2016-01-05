@@ -365,7 +365,10 @@ if __name__ == "__main__":
                 
             elif "usefulshell" and "logo" in shell:
                 webbrowser.open('https://github.com/Worldev/UsefulShell/images/usefulshell_logo.png')
-            
+            elif "copyright" in shell:
+                print(__copyright__)
+
+
             elif "web" in shell or "browser" in shell or "browse" in shell or "navega" in shell:
                 try:
                     if not 'http://' in shell[1]:
