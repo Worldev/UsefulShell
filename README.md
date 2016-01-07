@@ -10,8 +10,6 @@
 ## [Python 3.5](https://python.org/downloads/) needed (Linux installation explained in [Docs](https://github.com/Worldev/UsefulShell/wiki/Docs#getting-it))
 A useful shell you can customize.
 
-Copyright (C) 2015 - Miquel Comas (Mikicat), The UsefulShell Project.
-
 ### What can you do?
 * You can evaluate simple expressions, such as 5 == 5, 4 > 3, etc.
 * You can also open a port in your localhost, and ping websites to see if they are up.
