@@ -133,7 +133,8 @@ if __name__ == "__main__":
                 pass
             if "print" in shell or "show" in shell or "echo" in shell or "mostra" in shell or "ensenya" in shell:
                 if inp == 'show c':
-                    print("type 'show c all' to display all the conditions, or 'show c short' to display the first point")
+                    print("type 'show c all' to display all the conditions")
+                    print("or 'show c short' to display the first point")
                 elif inp == 'show c all':
                     conditions_all()
                 elif inp == 'show c short':
