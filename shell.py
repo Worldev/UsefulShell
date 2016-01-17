@@ -379,7 +379,8 @@ if __name__ == "__main__":
                     else:
                         print("Syntax: web/browser/browse <url>")
 
-
+            elif "credits" in shell:
+                print(__credits__)
 
             else:
                 try:
