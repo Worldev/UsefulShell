@@ -34,6 +34,7 @@ if __name__ == "__main__":
             from modules import *
             import getpass
             import datetime
+            import optparse
 
         except ImportError:
             print('WARNING: A module has failed to load')
@@ -43,25 +44,21 @@ if __name__ == "__main__":
             os.mkdir('tmp')
         except FileExistsError:
             pass
-        try:
-            if sys.argv[1] == 'http' or sys.argv[1] == 'httpd' or sys.argv[1] == 'server':
-                run()
-            elif sys.argv[1] == 'class':
-                classe = Class()
-            elif sys.argv[1] == 'classes':
-                try:
-                    while True:
-                        classe = Class()
-                except EOFError:
-                    pass
-                except KeyboardInterrupt:
-                    pass
-            elif sys.argv[1] == 'ftp':
-                FTPConnect(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
-            else:
-                pass
-        except IndexError:
-            pass
+        argv = None
+        parser = optparse.OptionParser('%prog [options]')
+        parser.add_option('--help-commands', action="store_true", dest="hc", help="Displays commands available and then exit")
+        parser.add_option('--class', action="store_true", dest="classe", help="registers a class group and then exit")
+        parser.add_option('--httpd', '--http-server', action="store_true", dest="httpd", help="opens a port and then exit")
+        opts, args = parser.parse_args(argv)
+        if opts.hc:
+            ajuda('commands')
+            exit()
+        elif opts.classe:
+            classe = Class()
+            exit()
+        elif opts.httpd:
+            run()
+            exit()
 
         day = time.strftime("%d")
         month = time.strftime("%b")
