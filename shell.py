@@ -46,9 +46,10 @@ if __name__ == "__main__":
             pass
         argv = None
         parser = optparse.OptionParser('%prog [options]')
-        parser.add_option('--help-commands', action="store_true", dest="hc", help="Displays commands available and then exit")
-        parser.add_option("-c", '--class', action="store_true", dest="classe", help="registers a class group and then exit")
-        parser.add_option("-s", '--http-server', action="store_true", dest="httpd", help="opens a port and then exit")
+        parser.add_option('--help-commands', action="store_true", dest="hc", help="Displays commands available and then exits")
+        parser.add_option("-c", '--class', action="store_true", dest="classe", help="Registers a class group and then exits")
+        parser.add_option("-s", '--http-server', action="store_true", dest="httpd", help="Opens a port and then exits")
+        parser.add_option('--credits', action="store_true", dest="credits", help="Shows credits and then exits")
         opts, args = parser.parse_args(argv)
         if opts.hc:
             ajuda('commands')
@@ -58,6 +59,9 @@ if __name__ == "__main__":
             exit()
         elif opts.httpd:
             run()
+            exit()
+        elif opts.credits:
+            print(__credits__)
             exit()
 
         day = time.strftime("%d")
