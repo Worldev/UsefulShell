@@ -47,7 +47,7 @@ if __name__ == "__main__":
         argv = None
         parser = optparse.OptionParser('%prog [options]')
         parser.add_option('--help-commands', action="store_true", dest="hc", help="Displays commands available and then exit")
-        parser.add_option("-s", '--class', action="store_true", dest="classe", help="registers a class group and then exit")
+        parser.add_option("-c", '--class', action="store_true", dest="classe", help="registers a class group and then exit")
         parser.add_option("-s", '--http-server', action="store_true", dest="httpd", help="opens a port and then exit")
         opts, args = parser.parse_args(argv)
         if opts.hc:
