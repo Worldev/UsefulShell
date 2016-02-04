@@ -50,6 +50,7 @@ if __name__ == "__main__":
         parser.add_option("-c", '--class', action="store_true", dest="classe", help="Registers a class group and then exits")
         parser.add_option("-s", '--http-server', action="store_true", dest="httpd", help="Opens a port and then exits")
         parser.add_option('--credits', action="store_true", dest="credits", help="Shows credits and then exits")
+        parser.add_option('--no-color', action="store_true", dest="no_color", help="Disables shell color")
         opts, args = parser.parse_args(argv)
         if opts.hc:
             ajuda('commands')
@@ -63,6 +64,8 @@ if __name__ == "__main__":
         elif opts.credits:
             print(__credits__)
             exit()
+        elif opts.no_color:
+            bcolors.no_color()
 
         day = time.strftime("%d")
         month = time.strftime("%b")
