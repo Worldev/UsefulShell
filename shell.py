@@ -65,7 +65,12 @@ if __name__ == "__main__":
             print(__credits__)
             exit()
         elif opts.no_color:
-            bcolors.no_color()
+            bcolors.HEADER = ''
+            bcolors.OKBLUE = ''
+            bcolors.OKGREEN = ''
+            bcolors.WARNING = ''
+            bcolors.FAIL = ''
+            bcolors.ENDC = ''
 
         day = time.strftime("%d")
         month = time.strftime("%b")
