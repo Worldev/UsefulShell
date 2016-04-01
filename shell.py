@@ -64,7 +64,7 @@ if __name__ == "__main__":
         elif opts.credits:
             print('Creator:', __credits__[0])
             del __credits__[0]
-            print('Contributors:', ' '.join(__credits__))
+            print('Contributors:', ', '.join(__credits__))
             exit()
         elif opts.no_color:
             bcolors.HEADER = ''
