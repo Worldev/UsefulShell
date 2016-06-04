@@ -376,7 +376,7 @@ if __name__ == "__main__":
                 search('+'.join(shell))
                 
             elif "usefulshell" and "logo" in shell:
-                webbrowser.open('https://github.com/Worldev/UsefulShell/images/usefulshell_logo.png')
+                webbrowser.open('https://github.com/Worldev/UsefulShell/blob/master/images/usefulshell_logo.png')
             elif "copyright" in shell:
                 print(__copyright__)
 
